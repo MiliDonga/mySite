@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Store APP</title>
+</head>
+<body>
+{% if cat_list %}
+    <h2>List of Categories</h2>
+    <ol>
+        {% for cat in cat_list %}
+            <li><a href="{{ cat.id }}/">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ol>
+{% else %}
+    <strong>There are no available categories!</strong>
+{% endif %}
+
+<p><a href="/myaoo/about">About page  (URL : hardcoded)</a></p>
+<p><a href="{% url 'myaoo:about' %}">About page  (URL : name-spacing)</a></p>
+
+</body>
+</html>

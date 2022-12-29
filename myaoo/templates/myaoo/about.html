@@ -1,0 +1,19 @@
+{% extends 'myaoo/base.html' %}
+
+{% block title %}About{% endblock %}
+{% block myhdg %}Hello {{ request.user.first_name }} {% endblock %}
+
+{% block body_block %}
+    <div class="mybdy">
+        <p>
+            <h1>This is an Online Store App</h1>
+        </p>
+        <p>
+            <h2> Visitors Count {{ about_visits }}
+            </h2>
+        </p>
+    </div>
+
+    {#    <p><a href="/myapp/">Index page (hardcoded URL)</a></p>#}
+    {#    <p><a href="{% url 'myapp:index' %}">Index page (URL name-spacing)</a></p>#}
+{% endblock %}

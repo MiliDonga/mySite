@@ -1,0 +1,14 @@
+{% extends 'myaoo/base.html' %}
+{% block title %}Detail{% endblock %}
+{% block myhdg %}Hello {{ request.user.first_name }} {% endblock %}
+
+{% block body_block %}
+    <div class="mybdy">
+        <p>Category Warehouse is: {{ cat_name }}</p>
+        <ul>
+            {% for product in products %}
+                <li> {{ product.name }} : {{ product.category }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

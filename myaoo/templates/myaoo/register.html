@@ -1,0 +1,15 @@
+{% extends 'myaoo/base.html' %}
+{% block body_block %}
+<div class="mybdy">
+    <h2>Register</h2>
+    <table class="form-table">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <td>
+                <button type="submit" name="submit" style="margin-left: 50%; border: none">Submit</button>
+            </td>
+        </form>
+    </table>
+</div>
+{% endblock %}

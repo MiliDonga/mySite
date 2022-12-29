@@ -1,0 +1,17 @@
+{% extends 'myaoo/base.html' %}
+
+{% block body_block %}
+    <div class="mybdy">
+        <h2>Login</h2>
+        <table>
+        <form id="login_form" method="post" action="{% url 'myaoo:login' %}" >
+            {% csrf_token %}
+            {{ LoginForm }}
+            <td>
+                <button type="submit" name="submit" class="btn btn-secondary" style="margin-left: 50%">Submit</button>
+            </td>
+        </form>
+        </table>
+        <a class="fgtpwd" href="{% url 'myaoo:password_reset' %}">Forgot Password?</a>
+    </div>
+{% endblock %}

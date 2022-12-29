@@ -1,0 +1,30 @@
+{% extends 'myaoo/base.html' %}
+{% block myhdg %}
+    Hello {{ request.user.first_name }}
+{% endblock %}
+
+{% block body_block %}
+    <div class="mybdy">
+        {% if prodlist %}
+            <ul>
+            {% for product in prodlist %}
+                <li>{{ product.name }} : {{ product.price }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p> There are no products available this time. </p>
+        {% endif %}
+        <div class="mybdy">
+            <table>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_table }}
+                    <td>
+                        <button type="submit" name="submit" class="btn btn-light btn-med">Submit</button>
+                    </td>
+                </form>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'myaoo/base.html' %}
+{% block myhdg %}
+    Hello {{ request.user.first_name }}
+{% endblock %}
+{% block body_block %}
+    {% csrf_token %}
+    {% if order_list %}
+        <h2>Orders Placed</h2>
+        <ol>
+            {% for order in order_list %}
+                <li> {{order.product.name}} </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <h2>There are no available orders!</h2>
+    {% endif %}
+{% endblock %}

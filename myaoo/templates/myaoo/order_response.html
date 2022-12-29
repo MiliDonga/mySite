@@ -1,0 +1,10 @@
+{% extends 'myaoo/base.html' %}
+{% block myhdg %} Hello {{ request.user.first_name }} {% endblock %}
+
+{% block body_block %}
+    <div class="mybdy">
+        {% if msg %}
+            <h3>{{ msg }}</h3>
+        {% endif %}
+    </div>
+{% endblock %}

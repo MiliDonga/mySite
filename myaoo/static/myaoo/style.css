@@ -1,0 +1,69 @@
+html {
+    min-height: 100%;
+}
+.hdng {
+    background-color: #14213d;
+    color: #f2f4f5;
+    height: 60px;
+    font-size: xx-large;
+    font-family: Verdana;
+    font-family: Copperplate, Papyrus, fantasy;
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+.myhdg{
+    margin-left: 1%;
+}
+.logbtn{
+    align-self: center;
+    margin-left: auto;
+    margin-right: 2%;
+}
+body{
+    background: linear-gradient(#cfffb3, #ffffe0);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.hbar1 {
+    display:inline;
+    margin: 15px;
+}
+
+li {
+    /*font-style: italic;*/
+    color: #000000;
+    font-family: "Helvetica";
+    font-family: Copperplate, Papyrus, fantasy;
+
+}
+
+.pagelinks {
+    color: #2a2929;
+    text-decoration: none;
+}
+
+.btnlinks {
+    color: white;
+    text-decoration: none;
+}
+
+.btns {
+    text-align-last: end;
+}
+.mybdy{
+    margin-left: 1%;
+}
+
+.fgtpwd{
+    text-decoration: none;
+    color: #380010;
+    margin-left: 3%;
+}
+.form-table {
+    display: grid;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}

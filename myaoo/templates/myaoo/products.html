@@ -1,0 +1,20 @@
+{% extends 'myaoo/base.html' %}
+{% block myhdg %}Hello {{ request.user.first_name }} {% endblock %}
+
+{% block body_block %}
+    <div class="mybdy">
+        {% if prodlist %}
+            <ul>
+            {% for prod in prodlist %}
+                <li>
+                    <p><a href={% url 'myaoo:productdetail' prod.id %} > {{ prod.name}}</a></p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p> There are no products available this time. </p>
+        {% endif %}
+
+        <button onclick="location.href='{% url 'myaoo:placeorder' %}'"  type="button" class="btn btn-dark">Place Order</button>
+    </div>
+{% endblock %}

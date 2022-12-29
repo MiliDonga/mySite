@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'myaoo/style.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title> Online Store APP - {% block title %} Welcome!{% endblock %} </title>
+</head>
+<body>
+
+    <div>
+        <h1 class="hdng">
+            <div class="myhdg">
+                Hello
+                {% if user.is_authenticated %}
+                    {{ request.user.username }}
+                {% else %}
+                    Guest
+                {% endif %}
+            </div>
+            <div class="logbtn">
+                {% if user.is_authenticated %}
+                    <button onclick="location.href='{% url 'myaoo:logout' %}'" type="button" class="btn btn-light">Logout</button>
+                    <button onclick="location.href='{% url 'myaoo:myorders' %}'" type="button" class="btn btn-light">My Orders</button>
+                {% else %}
+                    <button onclick="location.href='{% url 'myaoo:login' %}'" type="button" class="btn btn-light">Login</button>
+                    <button onclick="location.href='{% url 'myaoo:register' %}'" type="button" class="btn btn-light">Register</button>
+                {% endif %}
+            </div>
+        </h1>
+        {% block body_block %}*** {% endblock %}
+    </div>
+    <hr />
+    <div class="container">
+        <div class="btn-group-justified btns">
+            <button onclick="location.href='{% url 'myaoo:about' %}'" type="button" class="btn btn-dark">About</button>
+            <button onclick="location.href='{% url 'myaoo:index' %}'" type="button" class="btn btn-dark">Home Page</button>
+            <button onclick="location.href='{% url 'myaoo:products' %}'" type="button" class="btn btn-dark">Products</button>
+        </div>
+    </div>
+</body>
+</html>
